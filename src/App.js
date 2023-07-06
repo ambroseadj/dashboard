@@ -19,7 +19,7 @@ function SignupForm() {
         password,
       });
       console.log(response.data.message);
-      // Redirect to login page after successful signup
+    
       window.location.href = '/login';
     } catch (error) {
       console.log('An error occurred');
@@ -58,7 +58,7 @@ function LoginForm({ setToken }) {
         password,
       });
       setToken(response.data.token);
-      // Redirect to home page after successful login
+  
       window.location.href = '/success';
     } catch (error) {
       console.log('Authentication failed');
@@ -132,7 +132,7 @@ function generateBarChart(data) {
     .domain([0, d3.max(data, d => d.value)])
     .range([150, 0]);
 
-  // Create the SVG element
+  
   const svg = d3.select('#barChart')
     .append('svg')
     .attr('width', 500)
@@ -141,20 +141,18 @@ function generateBarChart(data) {
     .style('top', '65%')
     .style('right', '-20%')
     .style('transform', 'translate(-50%, -50%)');
-  // Create the main group element and translate it to the appropriate position
+  
   const g = svg.append('g')
     .attr('transform', 'translate(25, 25)');
 
-  // Create the x-axis
   g.append('g')
     .attr('transform', `translate(0, 150)`)
     .call(d3.axisBottom(xScale));
 
-  // Create the y-axis
+
   g.append('g')
     .call(d3.axisLeft(yScale));
-
-  // Create the bars
+  
   g.selectAll('.bar')
     .data(data)
     .enter()
@@ -227,7 +225,7 @@ function SuccessPage() {
       .style('left', '13%')
       .style('transform', 'translate(-50%, -50%)')
       function generateBarChart(data) {
-        // Set up scales for x and y axes
+        
         const xScale = d3.scaleBand()
           .domain(data.map(d => d.label))
           .range([0, 300])
@@ -237,7 +235,7 @@ function SuccessPage() {
           .domain([0, d3.max(data, d => d.value)])
           .range([150, 0]);
       
-        // Create the SVG element
+        
         const svg = d3.select('#barChart')
           .append('svg')
           .attr('width', 500)
@@ -246,11 +244,11 @@ function SuccessPage() {
           .style('top', '65%')
           .style('right', '-20%')
           .style('transform', 'translate(-50%, -50%)');
-        // Create the main group element and translate it to the appropriate position
+      
         const g = svg.append('g')
           .attr('transform', 'translate(25, 25)');
       
-        // Create the bars
+  
         g.selectAll('.bar')
           .data(data)
           .enter()
@@ -504,35 +502,35 @@ const BulletContainer = styled.div`
 const Bullet1 = styled.div`
   width: 10px;
   height: 10px;
-  background-color: blue; // Replace with the desired chart color
+  background-color: blue;
   border-radius: 50%;
   margin-right: 5px;
 `;
 const Bullet2 = styled.div`
   width: 10px;
   height: 10px;
-  background-color: green; // Replace with the desired chart color
+  background-color: green; 
   border-radius: 50%;
   margin-right: 5px;
 `;
 const Bullet3 = styled.div`
   width: 10px;
   height: 10px;
-  background-color: red; // Replace with the desired chart color
+  background-color: red;
   border-radius: 50%;
   margin-right: 5px;
 `;
 const Bullet4 = styled.div`
   width: 10px;
   height: 10px;
-  background-color: blue; // Replace with the desired chart color
+  background-color: blue;
   border-radius: 50%;
   margin-right: 5px;
 `;
 const Bullet5 = styled.div`
   width: 10px;
   height: 10px;
-  background-color: red; // Replace with the desired chart color
+  background-color: red; 
   border-radius: 40%;
   margin-right: 5px;
 `;
